@@ -3,9 +3,9 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
 
 class SaleesController extends AbstractController
 {
@@ -16,6 +16,19 @@ class SaleesController extends AbstractController
 
     public function index(): Response
     {
-        return $this->render('pages/salees.html.twig');
+        return $this->render('salees/salees.html.twig', [
+            'controller_name' => 'SaleesController',
+        ]);
     }
+
+    /**
+     * @Route("/recettes salées/recette/12", name="salees_show")
+     * @return Response
+     */
+
+    public function show():Response
+    {
+        return $this->render('salees/show.html.twig');
+    }
+
 }

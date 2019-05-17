@@ -16,7 +16,7 @@ class RecettesController extends AbstractController
 
     public function index(): Response
     {
-        return $this->render('pages/recettes.html.twig');
+        return $this->render('recettes/recettes.html.twig');
     }
 }
 

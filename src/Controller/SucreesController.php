@@ -16,6 +16,6 @@ class SucreesController extends AbstractController
 
     public function index(): Response
     {
-        return $this->render('pages/sucrees.html.twig');
+        return $this->render('sucrees/sucrees.html.twig');
     }
 }
