@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Recette;
+use App\Repository\RecetteRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,24 +13,36 @@ class SaleesController extends AbstractController
 {
     /**
      * @Route("/recettes salées", name="salees")
+     * @param RecetteRepository $repo
      * @return Response
      */
 
-    public function index(): Response
+    public function index(RecetteRepository $repo)
     {
+
+        $recettes = $repo->findAll();
+
         return $this->render('salees/salees.html.twig', [
             'controller_name' => 'SaleesController',
+            'recettes' => $recettes,
+
         ]);
     }
 
     /**
-     * @Route("/recettes salées/recette/12", name="salees_show")
+     * @Route("/recettes salées/{id}", name="salees_show")
+     * @param RecetteRepository $repo
+     * @param $id
      * @return Response
      */
 
-    public function show():Response
+    public function show(RecetteRepository $repo, $id)
     {
-        return $this->render('salees/show.html.twig');
+
+        $recette = $repo->find($id);
+        return $this->render('salees/show.html.twig', [
+            'recette' => $recette
+        ]);
     }
 
 }
