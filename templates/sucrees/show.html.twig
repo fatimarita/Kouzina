@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <article>
+        <h2>{{ recette.title }}</h2>
+        <div class="metadata">Ajouter le {{ recette.createdAt | date ('d/m/y') }} à {{ recette.createdAt | date('H:i') }} dans la catégorie Recette Salées</div>
+        <div class="content"></div>
+        <img src="{{ recette.imageSrc}}" alt="{{ recette.imageAlt}}">
+        {{ recette.content | raw }}
+
+    </article>
+{% endblock %}
