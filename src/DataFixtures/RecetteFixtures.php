@@ -14,12 +14,13 @@ class RecetteFixtures extends Fixture
         for($i = 1; $i <= 10; $i++){
             $recette = new Recette();
             $recette->setTitle("Titre de la recette n°$i")
-                    -> setContent("<p> Contenu de l'article n°$i</p>")
+                -> setContent("<p> Contenu de l'article n°$i</p>")
                 -> setImageAlt(" http://placehold.it/350x150")
                 -> setImageSrc(" http://placehold.it/350x150")
                 ->setCreatedAt(new \DateTime())
                 -> setNbViews("10")
                 -> setLiks("10");
+
             $manager->persist($recette);
 
         }
