@@ -191,12 +191,12 @@ class Recette
         return $this;
     }
 
-    public function getCommentRecette(): ?Content
+    public function getCommentRecette(): ?Comment
     {
         return $this->CommentRecette;
     }
 
-    public function setCommentRecette(?Content $CommentRecette): self
+    public function setCommentRecette(?Comment $CommentRecette): self
     {
         $this->CommentRecette = $CommentRecette;
 
@@ -232,5 +232,10 @@ class Recette
         }
 
         return $this;
+    }
+    public function __toString()
+    {
+        return $this->title;
+
     }
 }
