@@ -1,0 +1,30 @@
+easy_admin:
+  site_name: 'Blog Cuisine'
+  entities:
+    User:
+      class: App\Entity\User
+      role: ROLE_SUPER_ADMIN
+    Categories:
+      class: App\Entity\Categories
+      role: ROLE_SUPER_ADMIN
+    Recette:
+      class: App\Entity\Recette
+      role: ROLE_SUPER_ADMIN
+      form:
+        fields:
+          - title
+          - content
+          - nbViews
+          - imageAlt
+          - likes
+          - user
+          - comment
+          - categories
+          -
+              property: ImageFile
+              type: "file"
+
+
+
+
+
