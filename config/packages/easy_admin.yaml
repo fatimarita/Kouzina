@@ -20,6 +20,9 @@ easy_admin:
           - imageSrc
           - nbViews
           - liks
+          -
+              property: ImageFile
+              type: "file"
 
 
 

@@ -9,7 +9,7 @@
             <h2>{{ recette.title }}</h2>
             <div class="metadata">Ajouter le {{ recette.createdAt | date ('d/m/y') }}  dans la catégorie {#{ recette.categories }#}</div>
             <div class="content">
-                <img src="{{ recette.imageSrc}}" alt="{{ recette.imageAlt}}">
+                <img src="{{ vich_uploader_asset(recette, 'imageFile') | imagine_filter('thumb') }}" alt="card-img-top">
                 {{ recette.content | raw }}
                 <a href="{{ path('salees_show', {'id': recette.id}) }}" class="btn btn-primary">Lire la suite</a>
             </div>

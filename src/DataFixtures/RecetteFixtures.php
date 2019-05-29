@@ -17,6 +17,7 @@ class RecetteFixtures extends Fixture
                 -> setContent("<p> Contenu de l'article n°$i</p>")
                 -> setImageAlt(" http://placehold.it/350x150")
                 -> setImageSrc(" http://placehold.it/350x150")
+                -> setImageFile("image")
                 ->setCreatedAt(new \DateTime())
                 -> setNbViews("10")
                 -> setLiks("10");

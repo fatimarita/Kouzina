@@ -5,9 +5,12 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\RecetteRepository")
+ * @Vich\Uploadable
  */
 class Recette
 {
@@ -49,6 +52,17 @@ class Recette
     private $imageAlt;
 
     /**
+     * @Vich\UploadableField(mapping="image_recette", fileNameProperty="imageSrc")
+     * @var File
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updatedAt;
+
+    /**
      * @ORM\Column(type="integer")
      */
     private $liks;
@@ -69,6 +83,7 @@ class Recette
     {
         $this->user = new ArrayCollection();
         $this->categories = new ArrayCollection();
+        $this->updatedAt = new \DateTime();
     }
 
     public function getId(): ?int
@@ -237,5 +252,33 @@ class Recette
     {
         return $this->title;
 
+    }
+    /**
+     * @return File
+     */
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+    /**
+     * @param File $imageFile
+     */
+    public function setImageFile(File $imageFile): void
+    {
+        if (null !== $imageFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+        $this->imageFile = $imageFile;
+    }
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+        return $this;
     }
 }

@@ -5,7 +5,7 @@
         <h2>{{ recette.title }}</h2>
         <div class="metadata">Ajouter le {{ recette.createdAt | date ('d/m/y') }} à {{ recette.createdAt | date('H:i') }} dans la catégorie Recette Salées</div>
         <div class="content"></div>
-        <img src="{{ recette.imageSrc}}" alt="{{ recette.imageAlt}}">
+        <img src="{{ vich_uploader_asset(recette, 'imageFile') | imagine_filter('medium') }}" alt="card-img-top">
         {{ recette.content | raw }}
 
     </article>
