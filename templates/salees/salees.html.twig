@@ -1,25 +1,45 @@
+
 {% extends 'base.html.twig' %}
-{% block title %}Hello {{ controller_name }}{% endblock %}
+
+{% block title %}Recettes salées{% endblock %}
 
 {% block body %}
     <section class="recettes">
-        {% for recette in recettes %}
-
-        <article>
-            <h2>{{ recette.title }}</h2>
-            <div class="metadata">Ajouter le {{ recette.createdAt | date ('d/m/y') }}  dans la catégorie {#{ recette.categories }#}</div>
-            <div class="content">
-                <img src="{{ vich_uploader_asset(recette, 'imageFile') | imagine_filter('thumb') }}" alt="card-img-top">
-                {{ recette.content | raw }}
-                <a href="{{ path('salees_show', {'id': recette.id}) }}" class="btn btn-primary">Lire la suite</a>
-            </div>
-        </article>
-        {% endfor %}
-
-
-    </section>
+    <h1>Recettes salées</h1>
+    {% for recette in recettes %}
 
 
 
-    
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+
+
+
+
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="{{ vich_uploader_asset(recette, 'imageFile') | imagine_filter('thumb') }}" alt="card-img-top">
+                        <div class="card-body">
+                            <p class="card-text">{{ recette.title }}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a href="{{ path('salees_show', {'id': recette.id}) }}" class="btn btn-primary">Lire la suite</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+<div class="navigation">
+
+</div>
+    {% endfor %}
 {% endblock %}
