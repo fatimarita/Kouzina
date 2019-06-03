@@ -11,6 +11,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\RecetteRepository")
  * @Vich\Uploadable
+ * @method setCommentRecette(Comment $param)
  */
 class Recette
 {
@@ -84,6 +85,7 @@ class Recette
         $this->user = new ArrayCollection();
         $this->categories = new ArrayCollection();
         $this->updatedAt = new \DateTime();
+        $this->CommentRecette= new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -206,17 +208,45 @@ class Recette
         return $this;
     }
 
-    public function getCommentRecette(): ?Comment
+
+
+    /**
+     * @return Collection|Comment[]
+     */
+    public function getCommentRecette(): ?Collection
     {
         return $this->CommentRecette;
     }
 
-    public function setCommentRecette(?Comment $CommentRecette): self
+    /**
+     * @param Comment $CommentRecette
+     * @return Recette
+     */
+    public function addCommentRecette(Comment $CommentRecette): self
     {
-        $this->CommentRecette = $CommentRecette;
-
+        if (!$this->CommentRecette->contains($CommentRecette)) {
+            $this->CommentRecette[] = $CommentRecette;
+            $CommentRecette->setRecette($this);
+        }
         return $this;
     }
+
+    /**
+     * @param Comment $CommentRecette
+     * @return Recette
+     */
+    public function removeCommentRecette(Comment $CommentRecette): self
+    {
+        if ($this->CommentRecette->contains($CommentRecette)) {
+            $this->CommentRecette->removeElement($CommentRecette);
+            // set the owning side to null (unless already changed)
+            if ($CommentRecette->getRecette() === $this) {
+                $CommentRecette->setRecette(null);
+            }
+        }
+        return $this;
+    }
+
 
     /**
      * @return Collection|Categories[]
