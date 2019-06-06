@@ -9,9 +9,13 @@ use App\Form\CommentFrontType;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+
+
+
 
 /**
  * @method createFormComment($recette)
@@ -82,7 +86,28 @@ class SaleesController extends AbstractController
         $comment->getRecette($recette);
         return $this->createForm(CommentFrontType::class, $comment);
     }
+    /**
+     * @Route("/api/recette/likes/{id}")
+     * @return JsonResponse
+     */
+    public function incrementLikes($id): JsonResponse
+    {
+        $repo = $this->getDoctrine()->getRepository(Recette::class);
+        $recette = $repo->findOneBy([
+            'id' => $id
+        ]);
 
+        $liks = $recette->getLikes() + 1;
+
+        /** @var TYPE_NAME $likes */
+        $recette->setLikes($likes);
+        $manager = $this->getDoctrine()->getManager();
+        $manager->persist($recette);
+        $manager->flush();
+        return $this->json([
+            'cpt' => $likes
+        ]);
+    }
 
 }
 

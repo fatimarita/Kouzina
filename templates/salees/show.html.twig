@@ -9,6 +9,12 @@
         {{ recette.content | raw }}
 
     </article>
+    <div id="likes">
+        <span>{{ recette.likes }}</span>
+        <button class="btn btn-primary" data-id="{{ recette.id }}">
+            <i class="far fa-hand-point-right"></i>
+        </button>
+    </div>
     <h2>Commentaires</h2>
     {% for comment in recette.CommentRecette %}
         <div class="card">
@@ -26,4 +32,8 @@
 
 
 
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/ajax-article-likes.js') }}"></script>
 {% endblock %}

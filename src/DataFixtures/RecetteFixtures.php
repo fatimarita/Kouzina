@@ -20,7 +20,7 @@ class RecetteFixtures extends Fixture
                 -> setImageFile("image")
                 ->setCreatedAt(new \DateTime())
                 -> setNbViews("10")
-                -> setLiks("10");
+                -> setLikes("10");
 
             $manager->persist($recette);
 

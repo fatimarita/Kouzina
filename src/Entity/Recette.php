@@ -66,7 +66,7 @@ class Recette
     /**
      * @ORM\Column(type="integer")
      */
-    private $liks;
+    private $likes;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Comment", inversedBy="recette")
@@ -79,9 +79,16 @@ class Recette
     private $categories;
 
 
-
+    /**
+     * Recette constructor.
+     * @throws \Exception
+     */
     public function __construct()
     {
+        // On initialise le nombre de vues à 0
+        $this->setNbViews(0);
+        // On initialise le nombre de likes à 0
+        $this->setLikes(0);
         $this->user = new ArrayCollection();
         $this->categories = new ArrayCollection();
         $this->updatedAt = new \DateTime();
@@ -165,14 +172,14 @@ class Recette
         return $this;
     }
 
-    public function getLiks(): ?int
+    public function getLikes(): ?int
     {
-        return $this->liks;
+        return $this->likes;
     }
 
-    public function setLiks(int $liks): self
+    public function setLikes(int $likes): self
     {
-        $this->liks = $liks;
+        $this->likes = $likes;
 
         return $this;
     }
