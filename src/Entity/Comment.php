@@ -9,8 +9,6 @@ use Doctrine\ORM\Mapping as ORM;
 
  *
  * @ORM\Entity(repositoryClass="App\Repository\CommentRepository")
- * @method setRecette(Recette $recette)
- * @method setCommentRecette($comment)
  */
 class Comment
 {
@@ -33,13 +31,15 @@ class Comment
      */
     private $stars;
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Recette", mappedBy="CommentRecette")
-     */
-    private $recette;
-    /**
      * @ORM\OneToMany(targetEntity="App\Entity\User", mappedBy="commentUser")
      */
     private $user;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Recette", inversedBy="comments")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $recette;
     public function __construct()
     {
         $this->recette = new ArrayCollection();
@@ -76,37 +76,7 @@ class Comment
         $this->stars = $stars;
         return $this;
     }
-    /**
-     * @return Collection|Recette[]
-     */
-    public function getRecette(): Collection
-    {
-        return $this->recette;
-    }
 
-    /**
-     * @param Recette $recette
-     * @return Comment
-     */
-    public function addRecette(Recette $recette): self
-    {
-        if (!$this->recette->contains($recette)) {
-            $this->recette[] = $recette;
-            $recette->addCommentRecette($this);
-        }
-        return $this;
-    }
-    public function removeRecette(Recette $recette): self
-    {
-        if ($this->recette->contains($recette)) {
-            $this->recette->removeElement($recette);
-            // set the owning side to null (unless already changed)
-            if ($recette->getCommentRecette() === $this) {
-                $recette->setCommentRecette(null);
-            }
-        }
-        return $this;
-    }
     /**
      * @return Collection|User[]
      */
@@ -131,6 +101,23 @@ class Comment
                 $user->setCommentUser(null);
             }
         }
+        return $this;
+    }
+    public function __toString()
+    {
+        return $this->content;
+
+    }
+
+    public function getRecette(): ?Recette
+    {
+        return $this->recette;
+    }
+
+    public function setRecette(?Recette $recette): self
+    {
+        $this->recette = $recette;
+
         return $this;
     }
 }

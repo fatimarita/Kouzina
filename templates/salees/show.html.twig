@@ -16,7 +16,7 @@
         </button>
     </div>
     <h2>Commentaires</h2>
-    {% for comment in recette.CommentRecette %}
+    {% for comment in recette.comments %}
         <div class="card">
             <div class="card-body">
                 {{ comment.content }}
@@ -26,6 +26,7 @@
     <h2>Ajouter un commentaire</h2>
     {{ form_start(commentForm) }}
     {{ form_widget(commentForm.content) }}
+    {{ form_widget(commentForm) }}
     {{ form_errors(commentForm.content) }}
     <input type="submit" value="Publier" class="btn btn-block btn-success">
     {{ form_end(commentForm) }}

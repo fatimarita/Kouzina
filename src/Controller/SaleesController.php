@@ -17,9 +17,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 
 
-/**
- * @method createFormComment($recette)
- */
 class SaleesController extends AbstractController
 {
     /**
@@ -53,7 +50,7 @@ class SaleesController extends AbstractController
     {
 // Création du formulaire pour l'ajout de commentaire
 
-        /** @var TYPE_NAME $recette */
+        /** @var $recette */
 
         $commentForm = $this->createFormComment($recette);
 
@@ -83,7 +80,7 @@ class SaleesController extends AbstractController
     {
         // Création d'un nouveau formulaire
         $comment = new Comment();
-        $comment->getRecette($recette);
+        $comment->setRecette($recette);
         return $this->createForm(CommentFrontType::class, $comment);
     }
     /**

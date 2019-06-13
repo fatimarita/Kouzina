@@ -14,12 +14,12 @@ easy_admin:
         fields:
           - title
           - content
-          - categories
+          - category
           - createdAt
           - imageAlt
           - imageSrc
           - nbViews
-          - liks
+          - likes
           -
               property: ImageFile
               type: "file"

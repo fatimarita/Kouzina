@@ -68,15 +68,19 @@ class Recette
      */
     private $likes;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Comment", inversedBy="recette")
-     */
-    private $CommentRecette;
+
+
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Categories", mappedBy="recetteCategories")
+     * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="recette")
      */
-    private $categories;
+    private $comments;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Categories", inversedBy="recettes")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $category;
 
 
     /**
@@ -90,9 +94,8 @@ class Recette
         // On initialise le nombre de likes à 0
         $this->setLikes(0);
         $this->user = new ArrayCollection();
-        $this->categories = new ArrayCollection();
         $this->updatedAt = new \DateTime();
-        $this->CommentRecette= new ArrayCollection();
+        $this->comments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -217,79 +220,10 @@ class Recette
 
 
 
-    /**
-     * @return Collection|Comment[]
-     */
-    public function getCommentRecette(): ?Collection
-    {
-        return $this->CommentRecette;
-    }
-
-    /**
-     * @param Comment $CommentRecette
-     * @return Recette
-     */
-    public function addCommentRecette(Comment $CommentRecette): self
-    {
-        if (!$this->CommentRecette->contains($CommentRecette)) {
-            $this->CommentRecette[] = $CommentRecette;
-            $CommentRecette->setRecette($this);
-        }
-        return $this;
-    }
-
-    /**
-     * @param Comment $CommentRecette
-     * @return Recette
-     */
-    public function removeCommentRecette(Comment $CommentRecette): self
-    {
-        if ($this->CommentRecette->contains($CommentRecette)) {
-            $this->CommentRecette->removeElement($CommentRecette);
-            // set the owning side to null (unless already changed)
-            if ($CommentRecette->getRecette() === $this) {
-                $CommentRecette->setRecette(null);
-            }
-        }
-        return $this;
-    }
 
 
-    /**
-     * @return Collection|Categories[]
-     */
-    public function getCategories(): Collection
-    {
-        return $this->categories;
-    }
 
-    public function addCategory(Categories $category): self
-    {
-        if (!$this->categories->contains($category)) {
-            $this->categories[] = $category;
-            $category->setRecetteCategories($this);
-        }
 
-        return $this;
-    }
-
-    public function removeCategory(Categories $category): self
-    {
-        if ($this->categories->contains($category)) {
-            $this->categories->removeElement($category);
-            // set the owning side to null (unless already changed)
-            if ($category->getRecetteCategories() === $this) {
-                $category->setRecetteCategories(null);
-            }
-        }
-
-        return $this;
-    }
-    public function __toString()
-    {
-        return $this->title;
-
-    }
     /**
      * @return File
      */
@@ -316,6 +250,54 @@ class Recette
     public function setUpdatedAt(\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+        return $this;
+    }
+
+    /**
+     * @return Collection|Comment[]
+     */
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comment $comment): self
+    {
+        if (!$this->comments->contains($comment)) {
+            $this->comments[] = $comment;
+            $comment->setRecette($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comment $comment): self
+    {
+        if ($this->comments->contains($comment)) {
+            $this->comments->removeElement($comment);
+            // set the owning side to null (unless already changed)
+            if ($comment->getRecette() === $this) {
+                $comment->setRecette(null);
+            }
+        }
+
+        return $this;
+    }
+    public function __toString()
+    {
+        return $this->title;
+
+    }
+
+    public function getCategory(): ?Categories
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Categories $category): self
+    {
+        $this->category = $category;
+
         return $this;
     }
 }

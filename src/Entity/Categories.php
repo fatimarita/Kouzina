@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -22,10 +24,15 @@ class Categories
     private $typeCategories;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Recette", inversedBy="categories")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\OneToMany(targetEntity="App\Entity\Recette", mappedBy="category")
      */
-    private $recetteCategories;
+    private $recettes;
+
+    public function __construct()
+    {
+        $this->recettes = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -44,21 +51,42 @@ class Categories
         return $this;
     }
 
-    public function getRecetteCategories(): ?Recette
-    {
-        return $this->recetteCategories;
-    }
 
-    public function setRecetteCategories(?Recette $recetteCategories): self
-    {
-        $this->recetteCategories = $recetteCategories;
-
-        return $this;
-    }
 
     public function __toString()
     {
         return $this->typeCategories;
 
+    }
+
+    /**
+     * @return Collection|Recette[]
+     */
+    public function getRecettes(): Collection
+    {
+        return $this->recettes;
+    }
+
+    public function addRecette(Recette $recette): self
+    {
+        if (!$this->recettes->contains($recette)) {
+            $this->recettes[] = $recette;
+            $recette->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRecette(Recette $recette): self
+    {
+        if ($this->recettes->contains($recette)) {
+            $this->recettes->removeElement($recette);
+            // set the owning side to null (unless already changed)
+            if ($recette->getCategory() === $this) {
+                $recette->setCategory(null);
+            }
+        }
+
+        return $this;
     }
 }
