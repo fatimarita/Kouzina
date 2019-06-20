@@ -40,6 +40,16 @@ class Comment
      * @ORM\JoinColumn(nullable=false)
      */
     private $recette;
+
+    /**
+     * @ORM\Column(type="string", length=64)
+     */
+    private $nom;
+
+    /**
+     * @ORM\Column(type="string", length=64)
+     */
+    private $prenom;
     public function __construct()
     {
         $this->recette = new ArrayCollection();
@@ -117,6 +127,30 @@ class Comment
     public function setRecette(?Recette $recette): self
     {
         $this->recette = $recette;
+
+        return $this;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getPrenom(): ?string
+    {
+        return $this->prenom;
+    }
+
+    public function setPrenom(string $prenom): self
+    {
+        $this->prenom = $prenom;
 
         return $this;
     }

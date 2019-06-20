@@ -10,9 +10,10 @@ class CommentFrontType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('content', null, [
-                "label" => false
-            ])
+            ->add('nom')
+            ->add('prenom')
+            ->add('content')
+            
         ;
     }
     public function configureOptions(OptionsResolver $resolver)

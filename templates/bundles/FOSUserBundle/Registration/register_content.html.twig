@@ -2,8 +2,16 @@
 
 
 
+    {% block fos_user_content  %}
+<style>
+            body { background-image: url("home.png"); background-repeat:no-repeat;  background-size: cover; width: 100%;
+                height: 600px;}
+        </style>
+
 <main class="container">
+ 
     <h1>Inscription</h1>
+    
     {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
         {{ form_widget(form) }}
     <div>
@@ -11,3 +19,5 @@
     </div>
     {{ form_end(form) }}
 </main>
+
+{% endblock %}

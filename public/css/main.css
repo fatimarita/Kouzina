@@ -1,23 +1,116 @@
-/*.navbar {
-    background-color: #597a92;
-}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+  }
 
-body {
-    background-color: #4b4d50;
-    color: white;
-}
-
-/*.btn-link {
+@font-face {
+    font-family: 'Roboto-Thin.ttf';
+    src: url('Roboto-Thin.ttf.eot'); /* IE9 Compat Modes */
+    src: url('Roboto-Thin.ttf.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Roboto-Thin.ttf.woff2') format('woff2'), /* Super Modern Browsers */
+         url('Roboto-Thin.ttf.woff') format('woff'), /* Pretty Modern Browsers */
+         url('Roboto-Thin.ttf.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('Roboto-Thin.ttf.svg#svgFontName') format('svg'); /* Legacy iOS */
+  }
+  @font-face {
+    font-family: 'CaviarDreams.ttf';
+    src: url('CaviarDreams.ttf.eot'); /* IE9 Compat Modes */
+    src: url('CaviarDreams.ttf.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('CaviarDreams.ttf.woff2') format('woff2'), /* Super Modern Browsers */
+         url('CaviarDreams.ttf.woff') format('woff'), /* Pretty Modern Browsers */
+         url('CaviarDreams.ttf.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('CaviarDreams.ttf.svg#svgFontName') format('svg'); /* Legacy iOS */
+  }
+  body{font-size: .85em;}
+   
+    
+  .btn-link {
     color: white;
     padding: 0;
 }
+/* les titres et paragraphe*/
 
-img {
-    max-width: 100%;
-    height: auto;
+p {
+    font-size: 1.4rem;
+    font-style: inherit;
+    color: black;
+    font-family: 'Roboto-Thin.ttf';
+  text-decoration : none;
+  z-index: 2;
+  }
+h1{
+    font-size: 2rem;
+    font-style: inherit;
+    color:black;
+    font-family: 'CaviarDreams.ttf';
+  text-decoration: none;
+  z-index: 2;
+
+}  
+
+/* css formulaire*/
+#contactForm {height: xxpx; /* Hauteur des champs */
+  width: 50%; /* Longueur des champs */
+  border: xxx; /* Epaisseur de la bordure s'il y a lieu */
+  border-color: red; /* Couleur de la bordure s'il y a lieu */
+  
+  
+  }
+
+  .fos_user_registration_register {
+    height: xxpx; /* Hauteur des champs */
+  width: 50%; /* Longueur des champs */
+  border: xxx; /* Epaisseur de la bordure s'il y a lieu */
+  border-color: red; /* Couleur de la bordure s'il y a lieu */
+  
+
+  }
+.form-signin{
+  height: xxpx; /* Hauteur des champs */
+  width: 50%; /* Longueur des champs */
+  border: xxx; /* Epaisseur de la bordure s'il y a lieu */
+  border-color: red; /* Couleur de la bordure s'il y a lieu */
 }
-.btn-blue {
-    color: white;
-    background-color: #404aff;
-    border-color: #404aff;
-}*/
+
+
+/* Les boutons*/
+/*boutton login class="btn btn-lg btn-primary btn-block"*/
+.btn-primary{background-color: #ABB2B9;
+
+}
+/* boutton de recherche home  "btn btn-outline-success my-2 my-sm-0" type="submit"*/
+.btn-outline{background-color:#ABB2B9  ;
+
+}
+/* boutton de contact  <button class="btn btn-primary">*/
+.btn-primary{background-color: #ABB2B9  ;
+
+}
+/* boutton de inscription class="btn btn-primary"*/
+.btn-primary{background-color: #ABB2B9  ;}
+
+/*boutton commentaire publier  class="btn btn-block btn-success btn-sm"*/
+
+.btn-success{
+  background-color: #ABB2B9 ;
+
+}
+
+/*page recette*/
+
+.card-text{
+
+}
+
+.cardbody{
+
+}
+
+#metadata{
+
+}
