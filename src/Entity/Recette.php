@@ -32,6 +32,13 @@ class Recette
      */
     private $content;
 
+
+
+
+
+
+    
+
     /**
      * @ORM\Column(type="datetime")
      */
@@ -81,6 +88,21 @@ class Recette
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $ingredients;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $preparation;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $cuisson;
 
 
     /**
@@ -300,4 +322,41 @@ class Recette
 
         return $this;
     }
+
+    public function getIngredients(): ?string
+    {
+        return $this->ingredients;
+    }
+
+    public function setIngredients(string $ingredients): self
+    {
+        $this->ingredients = $ingredients;
+
+        return $this;
+    }
+
+    public function getPreparation(): ?string
+    {
+        return $this->preparation;
+    }
+
+    public function setPreparation(string $preparation): self
+    {
+        $this->preparation = $preparation;
+
+        return $this;
+    }
+
+    public function getCuisson(): ?string
+    {
+        return $this->cuisson;
+    }
+
+    public function setCuisson(string $cuisson): self
+    {
+        $this->cuisson = $cuisson;
+
+        return $this;
+    }
 }
+

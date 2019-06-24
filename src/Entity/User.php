@@ -39,6 +39,8 @@ class User extends BaseUser
      */
     private $commentUser;
 
+    
+
     public function __construct()
     {
         parent::__construct();

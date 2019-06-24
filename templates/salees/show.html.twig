@@ -6,14 +6,26 @@
     <link rel="stylesheet" href="{{ asset('css/recette.css') }}">
 
 {% endblock %}
-    <article>
-        <h2>{{ recette.title }}</h2>
-        <div class="metadata">Ajouter le {{ recette.createdAt | date ('d/m/y') }} à {{ recette.createdAt | date('H:i') }} dans la catégorie Recette Salées</div>
+<main class="container">
+        <h1>{{ recette.title }}</h1>
+        <div class="metadata">Ajouter le {{ recette.createdAt | date ('d/m/y') }} Catégorie Recette Salées.</div>
         <div class="content"></div>
         <img src="{{ vich_uploader_asset(recette, 'imageFile') | imagine_filter('medium') }}" alt="card-img-top">
-        {{ recette.content | raw }}
+        
 
-    </article>
+        <div class="content">{{ recette.content | raw }}</div>
+    
+        <div class="ingredients"><i class="fas fa-book"> Ingredients: </i>
+            <ul class="list">
+         {{ recette.ingredients | raw }}  
+        </ul>
+        </div>
+              
+           <div class="preparation"><i class="fas fa-mortar-pestle"> Préparation: </i> {{ recette.preparation | raw }}</div>
+              
+            <div class="cuisson"> <i class="fas fa-temperature-high"> Cuisson: </i>{{ recette.cuisson | raw }}</div>
+        
+   
     <div id="likes">
         <span>{{ recette.likes }}</span>
         <button class="btn btn-primary" data-id="{{ recette.id }}">
@@ -21,21 +33,24 @@
         </button>
     </div>
     
-    <h4>Ajouter un commentaire</h4>
+    <h2>Ajouter un commentaire</h2>
     {{ form_start(commentForm, {'attr': {'class': 'commentForm'}}) }}
     
     {{ form_widget(commentForm, {'attr': {'class': 'foo'}}) }}
     {{ form_widget(commentForm.content, {'attr': {'class': 'commentForm.content'}}) }}
     {{ form_errors(commentForm.content, {'attr': {'class': 'errors'}}) }}
-    <input type="submit" value="Publier" class="btn btn-success btn-sm">
+    <input type="submit" value="Publier" class="btn btn-secondary">
     {{ form_end(commentForm) }}
 
 <h3>Commentaires</h3>
     {% for comment in recette.comments %}
         <div class="ob-Commentaires">
-            <div class="ob-list">
+            <div class="nom">
             {{comment.nom}}
             {{comment.prenom}}
+        </div>
+            <div class="ob-list"> 
+                    <i class="far fa-comments"></i>
             {{comment.content}}
             </div>
         </div>
@@ -45,4 +60,5 @@
 {% block javascripts %}
     {{ parent() }}
     <script src="{{ asset('js/ajax-article-likes.js') }}"></script>
+    </main>
 {% endblock %}

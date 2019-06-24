@@ -31,7 +31,7 @@ class ContactNotification
     {
         $message = (new \Swift_Message())
             ->setForm('noreply@blog.fr')
-            ->setTo('contact@blog.fr')
+            ->setTo('anwal.blog@gmail.com')
             ->setReplyTo($contact->getEmail())
             ->setBody($this->renderer->render('emails/contact.html.twig', [
                 'contact' => $contact

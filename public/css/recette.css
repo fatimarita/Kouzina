@@ -1,64 +1,99 @@
-
-h2{font-family: 'Roboto-Thin.ttf', helvetica, sans-serif;
-    font-size: 1.4rem;
-    font-style: inherit;
-    color: black;
-
-}
-
-h3{
-    font-family: 'Roboto-Thin.ttf', helvetica, sans-serif;
-    font-size: 1.4rem;
-    font-style: inherit;
-    color: black;
-}
-h4{
-    font-family: 'Roboto-Thin.ttf', helvetica, sans-serif;
-    font-size: 1.4rem;
-    font-style: inherit;
-    color: black;
-}
-/*
-#card-text{
-
-}
-likes{
-
+.recettes{
+    margin-top: 10%;
+    padding-top: 10px;
 }
 
 
 
-#cardbody{
+
+/*page show.html.twig*/
+
+
+.metadata{color:#AEB6BF;
+}
+
+.content{
+    
+  /*display: list-item;*/
+  vertical-align: bottom;
+  /*list-style: circle;*/
+
+  width: 100px;
+  white-space : pre;
+  vertical-align : bottom;
+ 
+}
+
+.ingredients{
+    /*display: list-item;*/
+    vertical-align: bottom;
+    display: inline-block;
+	width: 100px;
+    white-space : pre;
+    vertical-align : bottom;
+    list-style-type : disc;
+}
+.list{ list-style-type : disc;
 
 }
 
-
-
-/**ajouter le a category  */
-/*# metadata{
-
-}
-/**boutton likes  */
-/*# farfa-hand-point-right{
-
+.preparation .cuisson{
+    display: block;
+    white-space : pre;  
+    margin-right: 20px;
+    margin-left: 20px
 }
 
-/**boutton pour publier  */
-/*# btn btn-block btn-succes{
+/*couleur coeur*/
+fas fa-heart{
+    color: red;
+}
+
+.foo{
+    width: 30%;
 
 }
-/**boutton pour lire la suite  */
-/*# btn btn-primary {
+.ob-Commentaires{ white-space : normal;
+   
+}
+/*nom et prenom commentaire*/
+.nom{
+    font-weight : bold;
+}
 
-}
-.btn-success
-{
-background:#f5f5f5;
-color:#555;
-padding:6px 0 6px 0;
-font:bold 13px Arial;
-border-radius:2px;
-width:100px;
-border:1px solid #ccc;
-box-shadow:1px 1px 3px #999;
-}
+
+/*ajouter un commentaire
+<h4>Ajouter un commentaire</h4>
+    {{ form_start(commentForm, {'attr': {'class': 'commentForm'}}) }}
+    
+    {{ form_widget(commentForm, {'attr': {'class': 'foo'}}) }}
+    {{ form_widget(commentForm.content, {'attr': {'class': 'commentForm.content'}}) }}
+    {{ form_errors(commentForm.content, {'attr': {'class': 'errors'}}) }}
+    <input type="submit" value="Publier" class="btn btn-success btn-sm">
+    {{ form_end(commentForm) }}
+
+
+*/
+/*<h3>Commentaires</h3>
+    {% for comment in recette.comments %}
+        <div class="ob-Commentaires">
+            <div class="ob-list">
+            {{comment.nom}}
+            {{comment.prenom}}
+            {{comment.content}}
+            </div>
+        </div>
+    {% endfor %}
+    */
+
+    /*page salees.html.twig*/
+    
+
+
+    
+
+
+    
+
+
+

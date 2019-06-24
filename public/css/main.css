@@ -10,6 +10,7 @@
 
 @font-face {
     font-family: 'Roboto-Thin.ttf';
+    src: url("css/fonts/Roboto-Thin.ttf");
     src: url('Roboto-Thin.ttf.eot'); /* IE9 Compat Modes */
     src: url('Roboto-Thin.ttf.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
          url('Roboto-Thin.ttf.woff2') format('woff2'), /* Super Modern Browsers */
@@ -19,21 +20,53 @@
   }
   @font-face {
     font-family: 'CaviarDreams.ttf';
+    src: url("css/fonts/CaviarDreams.ttf");
     src: url('CaviarDreams.ttf.eot'); /* IE9 Compat Modes */
     src: url('CaviarDreams.ttf.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
          url('CaviarDreams.ttf.woff2') format('woff2'), /* Super Modern Browsers */
          url('CaviarDreams.ttf.woff') format('woff'), /* Pretty Modern Browsers */
          url('CaviarDreams.ttf.ttf')  format('truetype'), /* Safari, Android, iOS */
-         url('CaviarDreams.ttf.svg#svgFontName') format('svg'); /* Legacy iOS */
-  }
+         url('CaviarDreams.ttf.svg#svgFontName') format('svg'); /* Legacy iOS */}
+
+
+
+/*navbar*/
+.navbar-brand{
+  background-color:
+}
+.navbar-text{
+  font: bold;
+}
+.navbar-expand-lg{
+  font-weight: bold;
+font-size: 17px;
+font-family: "Roboto",Arial, Helvetica, sans-serif;
+  background-color: whitesmoke;
+  height: 60px;
+ 
+}
+.dropdown-menu{
+  background-color: whitesmoke;
+}
+/*
+.nav-item dropdown{
+  background-color:
+}
+.dropdown-item{
+  background-color:
+
+}*/
+
   body{font-size: .85em;}
    
     
-  .btn-link {
-    color: white;
-    padding: 0;
+  
+/* les titres et paragraphe container*/
+.container{margin-top: 5%;
+  background-color: white;
+
+
 }
-/* les titres et paragraphe*/
 
 p {
     font-size: 1.4rem;
@@ -44,26 +77,52 @@ p {
   z-index: 2;
   }
 h1{
-    font-size: 2rem;
-    font-style: inherit;
-    color:black;
-    font-family: 'CaviarDreams.ttf';
+  font-size: 2rem;
+  font-style: inherit;
+  color:black;
+  font-family: 'CaviarDreams.ttf';
   text-decoration: none;
-  z-index: 2;
+  background-color: transparent;
+  margin-bottom: 10px;
+  
 
+
+  
 }  
+
+
+h2{
+  font-family: 'CaviarDreams.ttf';
+  font-size: 1.6rem;
+  font-style: inherit;
+  color: black;
+}
+
+h3{
+  font-family: 'Roboto-Thin.ttf';
+  font-size: 1.4rem;
+  font-style: inherit;
+  color: black;
+  margin-top: 1%;
+}
+h4{
+  font-family: 'Roboto-Thin.ttf';
+  font-size: 1.4rem;
+  font-style: inherit;
+  color: black;
+  margin-top: 1%;
+}
+
 
 /* css formulaire*/
 #contactForm {height: xxpx; /* Hauteur des champs */
   width: 50%; /* Longueur des champs */
   border: xxx; /* Epaisseur de la bordure s'il y a lieu */
   border-color: red; /* Couleur de la bordure s'il y a lieu */
-  
-  
   }
 
   .fos_user_registration_register {
-    height: xxpx; /* Hauteur des champs */
+  height: xxpx; /* Hauteur des champs */
   width: 50%; /* Longueur des champs */
   border: xxx; /* Epaisseur de la bordure s'il y a lieu */
   border-color: red; /* Couleur de la bordure s'il y a lieu */
@@ -79,38 +138,33 @@ h1{
 
 
 /* Les boutons*/
-/*boutton login class="btn btn-lg btn-primary btn-block"*/
+/*boutton login class="btn btn-lg btn-primary btn-block"
 .btn-primary{background-color: #ABB2B9;
 
 }
-/* boutton de recherche home  "btn btn-outline-success my-2 my-sm-0" type="submit"*/
+/* boutton de recherche home  "btn btn-outline-success my-2 my-sm-0" type="submit"
 .btn-outline{background-color:#ABB2B9  ;
 
 }
-/* boutton de contact  <button class="btn btn-primary">*/
+/* boutton de contact  <button class="btn btn-primary">
 .btn-primary{background-color: #ABB2B9  ;
 
 }
-/* boutton de inscription class="btn btn-primary"*/
+/* boutton de inscription class="btn btn-primary"
 .btn-primary{background-color: #ABB2B9  ;}
 
-/*boutton commentaire publier  class="btn btn-block btn-success btn-sm"*/
+/*boutton commentaire publier  class="btn btn-block btn-success btn-sm"
 
 .btn-success{
   background-color: #ABB2B9 ;
 
+}*/
+
+.btn-secondary{
+  background-color: #ABB2B9;
 }
 
-/*page recette*/
-
-.card-text{
-
-}
-
-.cardbody{
-
-}
-
-#metadata{
-
+/*page login*/
+.h3{
+  padding-top: 25%;
 }

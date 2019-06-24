@@ -86,6 +86,7 @@ class Comment
         $this->stars = $stars;
         return $this;
     }
+   
 
     /**
      * @return Collection|User[]
