@@ -15,10 +15,10 @@
 
         <div class="content">{{ recette.content | raw }}</div>
     
-        <div class="ingredients"><i class="fas fa-book"> Ingredients: </i>
-            <ul class="list">
-         {{ recette.ingredients | raw }}  
-        </ul>
+        <div class="ingredients"><i class="fas fa-book"> Ingredients: </i><ul class="list">
+            
+         {{ recette.ingredients | raw }}  </ul>
+        
         </div>
               
            <div class="preparation"><i class="fas fa-mortar-pestle"> Préparation: </i> {{ recette.preparation | raw }}</div>
@@ -55,10 +55,11 @@
             </div>
         </div>
     {% endfor %}
+</main>
 
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
     <script src="{{ asset('js/ajax-article-likes.js') }}"></script>
-    </main>
+    
 {% endblock %}

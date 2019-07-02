@@ -5,21 +5,29 @@
     <link rel="stylesheet" href="{{ asset('css/presentation.css') }}">
 
 {% endblock %}
+
 {% block body %}
 
 
 
   <main class="container">
-  <div class="circle">
+      
+  <div class="wrapper"> 
     <h1>Qui suis-je?</h1>
-    <p>Coucou tou le monde, <br> Tout d'abord bienvenue dans mon blog. <br> A travers ce blog, je vous partage ma passion pour la cuisine,<br> avec des recettes dénichées dans des livres... <br> J'espère vous donner l'envie de cuisiner <br> et ainsi régaler votre entourage avec mes réalisations. </p>
-
-    <style>
-            body { background-image: url("presentation10.jpg"); background-repeat:no-repeat;  background-size: cover; z-index: 0; }
-        </style>
+    <p class="presentation">Coucou tout le monde, <br> Tout d'abord bienvenue dans mon blog. A travers ce blog, je vous partage ma passion pour la cuisine,<br> avec des recettes dénichées dans des livres... <br> J'espère vous donner l'envie de cuisiner <br> et ainsi régaler votre entourage avec mes réalisations. </p>
+    
         
+   
 
     </div>
+        
+
+    
 </main>
+<style>
+            body { background-image: url("img/presentation.jpg"); background-repeat:no-repeat;  background-size: cover; width: 100%;
+                height: 600px;}
+        </style>
+       
 
 {% endblock %}

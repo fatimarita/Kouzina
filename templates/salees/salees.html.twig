@@ -5,25 +5,27 @@
 
 {% block body %}
 <main class="container">
-<div class="album py-5 bg-light">
+
    
-            <h1>Recettes salées</h1>
+            <h1 class="list">Recettes</h1>
         <div class="row">
 
 
         {% for recette in recettes %}
 
                 <div class="col-4">
-                <span class="border"></span>
+                
                     <div class="card mb-4 shadow-sm">
                         <img src="{{ vich_uploader_asset(recette, 'imageFile') | imagine_filter('thumb') }}" alt="card-img-top" class="rounded-circle">
                         
                         <div class="card-body">
-                            <p class="card-text">{{ recette.title }}</p>
-                            <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="card-text">{{ recette.title }}</h4>
+                            <div class="d-flex justify-content-center">
+        
                                 <div class="btn-group" role="group" aria-label="Basic example">
+                                        
                                     <a href="{{ path('salees_show', {'id': recette.id}) }}" class="btn btn-secondary">Lire la suite</a>
-
+                                         
                                 </div>
                             </div>
                         </div>
@@ -35,7 +37,7 @@
 
         </div>
     </div>
-</div>
+
 
 
 <div class="navigation">

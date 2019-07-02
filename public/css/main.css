@@ -6,11 +6,14 @@
   font: inherit;
   vertical-align: baseline;
   text-decoration: none;
+  box-sizing: 100%;
+  
+  
   }
 
 @font-face {
     font-family: 'Roboto-Thin.ttf';
-    src: url("css/fonts/Roboto-Thin.ttf");
+    src: url("/fonts/Roboto-Thin.ttf");
     src: url('Roboto-Thin.ttf.eot'); /* IE9 Compat Modes */
     src: url('Roboto-Thin.ttf.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
          url('Roboto-Thin.ttf.woff2') format('woff2'), /* Super Modern Browsers */
@@ -20,7 +23,7 @@
   }
   @font-face {
     font-family: 'CaviarDreams.ttf';
-    src: url("css/fonts/CaviarDreams.ttf");
+    src: url("/fonts/CaviarDreams.ttf");
     src: url('CaviarDreams.ttf.eot'); /* IE9 Compat Modes */
     src: url('CaviarDreams.ttf.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
          url('CaviarDreams.ttf.woff2') format('woff2'), /* Super Modern Browsers */
@@ -34,17 +37,19 @@
 .navbar-brand{
   background-color:
 }
+
 .navbar-text{
   font: bold;
 }
+
 .navbar-expand-lg{
   font-weight: bold;
-font-size: 17px;
-font-family: "Roboto",Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-family: "Roboto",Arial, Helvetica, sans-serif;
   background-color: whitesmoke;
   height: 60px;
- 
 }
+
 .dropdown-menu{
   background-color: whitesmoke;
 }
@@ -57,62 +62,100 @@ font-family: "Roboto",Arial, Helvetica, sans-serif;
 
 }*/
 
-  body{font-size: .85em;}
+body{position: relative;
+  padding-bottom: 5em;
+  height: 100%;
+  box-sizing: 100%;
+  
+  
+ 
+ }
    
     
   
 /* les titres et paragraphe container*/
-.container{margin-top: 5%;
-  background-color: white;
-
-
+.container{
+  margin-top: 5%;
+  
 }
 
 p {
-    font-size: 1.4rem;
+    font-size: 1em;
     font-style: inherit;
     color: black;
-    font-family: 'Roboto-Thin.ttf';
-  text-decoration : none;
-  z-index: 2;
+    font-family: 'Roboto-Thin.ttf', Arial, Helvetica, sans-serif;
+    text-decoration : none;
+    z-index: 2;
   }
+
 h1{
-  font-size: 2rem;
+  font-size: 2.5em;
   font-style: inherit;
   color:black;
-  font-family: 'CaviarDreams.ttf';
+  font-family: 'CaviarDreams.ttf', "Times New Roman", Times, serif;
+
   text-decoration: none;
   background-color: transparent;
-  margin-bottom: 10px;
-  
-
-
-  
+  padding-top: 2%;
+ 
 }  
 
-
 h2{
-  font-family: 'CaviarDreams.ttf';
-  font-size: 1.6rem;
+  font-family: 'CaviarDreams.ttf', "Times New Roman", Times, serif;
+  font-size: 1.875em;
   font-style: inherit;
   color: black;
+  
 }
 
 h3{
-  font-family: 'Roboto-Thin.ttf';
-  font-size: 1.4rem;
+  font-family: 'Roboto-Thin.ttf', "Times New Roman", Times, serif;
+  font-size: 1.6em;
   font-style: inherit;
   color: black;
   margin-top: 1%;
 }
 h4{
-  font-family: 'Roboto-Thin.ttf';
-  font-size: 1.4rem;
+  font-family: 'Roboto-Thin.ttf', "Times New Roman", Times, serif;
+  font-size: 1.4em;
   font-style: inherit;
   color: black;
   margin-top: 1%;
 }
 
+/*page connexion*/
+.h3{
+  padding-top: 20%;
+  font-size: 2.5em;
+  font-style: inherit;
+  color:black;
+  font-family: 'CaviarDreams.ttf', "Times New Roman", Times, serif;
+  text-decoration: none;
+
+ 
+}
+
+.list{ padding-top: 3%;
+
+}
+/* presentation.html.twih*/
+.wrapper{
+
+  border: 2px solid transparent;
+ 
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 50%;
+  margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
+  transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */}
+
+  .presentation{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.4em;
+
+  }
+  
+  
 
 /* css formulaire*/
 #contactForm {height: xxpx; /* Hauteur des champs */
@@ -162,9 +205,117 @@ h4{
 
 .btn-secondary{
   background-color: #ABB2B9;
+ 
+}
+.btn-group{
+  align-items: center;
+ 
+
+ }
+
+
+
+/*salees.html.twig*/
+.card-text{ text-align: center;
+}
+.btn-group {align-content: center;}
+
+/*page show.html.twig*/
+
+
+.metadata{
+  color:#AEB6BF;
 }
 
-/*page login*/
-.h3{
-  padding-top: 25%;
+.content{
+    padding-top: 5px;
+    font-style: italic;
+    width: 100px;
+    white-space: pre;
+  
 }
+
+.ingredients{
+    /*display: list-item;*/
+    padding-top: 5px;
+    display: inline-block;
+	  width: 100px;
+    white-space : pre;
+    vertical-align : bottom;
+    list-style-type : disc;
+}
+.list{ list-style-type : disc;
+
+}
+
+.preparation .cuisson{
+    display: block;
+    white-space : pre;  
+    margin-right: 20px;
+    margin-left: 20px
+}
+#likes{
+  padding-top: 5px;
+
+}
+/*couleur coeur*/
+fas fa-heart{
+    color: red;
+}
+.btn btn-primary{
+  color:red;
+}
+
+.foo{
+    width: 30%;
+
+}
+.ob-Commentaires{ white-space : normal;
+   
+}
+/*nom et prenom commentaire*/
+.nom{
+    font-weight : bold;
+}
+
+
+/*ajouter un commentaire
+<h4>Ajouter un commentaire</h4>
+    {{ form_start(commentForm, {'attr': {'class': 'commentForm'}}) }}
+    
+    {{ form_widget(commentForm, {'attr': {'class': 'foo'}}) }}
+    {{ form_widget(commentForm.content, {'attr': {'class': 'commentForm.content'}}) }}
+    {{ form_errors(commentForm.content, {'attr': {'class': 'errors'}}) }}
+    <input type="submit" value="Publier" class="btn btn-success btn-sm">
+    {{ form_end(commentForm) }}
+
+
+*/
+/*<h3>Commentaires</h3>
+    {% for comment in recette.comments %}
+        <div class="ob-Commentaires">
+            <div class="ob-list">
+            {{comment.nom}}
+            {{comment.prenom}}
+            {{comment.content}}
+            </div>
+        </div>
+    {% endfor %}
+    */
+
+   
+    /*footer*/
+    .footer-page{
+      background-color:whitesmoke;
+      
+      position: absolute;
+       bottom: 0;
+       left: 0; 
+       right: 0;
+       
+	height: 100px; 
+      }
+      
+      
+
+     
