@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" rel="stylesheet">
         <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <script src="{{ asset('js/tag_google_analytics.js') }}"></script>
         
         {% block stylesheets %}{% endblock %}
 
@@ -27,7 +28,7 @@
                 <span class="navbar-text"></span>
 
                 <a class="navbar-brand" href="{{ path('home') }}">
-                <img src="img/logo.png" alt="logo-Anwal" style="width:40px;">
+                <img src="{{asset('img/logo.png')}}" alt="logo-Anwal" style="width:40px;">
                 </a>
                 <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
                     <span class="navbar-toggler-icon"></span>
@@ -177,7 +178,7 @@
     </body>
 
       {% block javascripts %}{% endblock %}
-      <script src="{{ asset('js/tag_google_analytics.js') }}"></script>
+      
       <script crossorigin="anonymous" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
       <script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
       <script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
