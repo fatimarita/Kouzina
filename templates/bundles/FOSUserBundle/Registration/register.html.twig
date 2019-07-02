@@ -1,10 +1,12 @@
-
 {% extends "@FOSUser/layout.html.twig" %}
 
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="{{ asset('css/register.css') }}">
-
+    <style>
+        body { background-image: url("/img/home9.jpg"); background-repeat:no-repeat;  background-size: cover; width: 100%;
+            height: 400px;}
+    </style>
 {% endblock %}
 
 
@@ -25,9 +27,6 @@
     </div>
     {{ form_end(form) }}
 </main>
-<style>
-            body { background-image: url("img/home9.jpg"); background-repeat:no-repeat;  background-size: cover; width: 100%;
-                height: 400px;}
-        </style>
+
 {% endblock fos_user_content %}
 

@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -10,26 +11,36 @@
   
   
   }
+.page-footer {
+    background-color: red;
+}
+.page-footer > div{
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+}
 
 @font-face {
     font-family: 'Roboto-Thin.ttf';
     src: url("/fonts/Roboto-Thin.ttf");
-    src: url('Roboto-Thin.ttf.eot'); /* IE9 Compat Modes */
-    src: url('Roboto-Thin.ttf.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('Roboto-Thin.ttf.woff2') format('woff2'), /* Super Modern Browsers */
-         url('Roboto-Thin.ttf.woff') format('woff'), /* Pretty Modern Browsers */
-         url('Roboto-Thin.ttf.ttf')  format('truetype'), /* Safari, Android, iOS */
-         url('Roboto-Thin.ttf.svg#svgFontName') format('svg'); /* Legacy iOS */
+    src: url('/fonts/Roboto-Thin.ttf.eot'); /* IE9 Compat Modes */
+    src: url('/fonts/Roboto-Thin.ttf.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/fonts/Roboto-Thin.ttf.woff2') format('woff2'), /* Super Modern Browsers */
+         url('/fonts/Roboto-Thin.ttf.woff') format('woff'), /* Pretty Modern Browsers */
+         url('/fonts/Roboto-Thin.ttf.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('/fonts/Roboto-Thin.ttf.svg#svgFontName') format('svg'); /* Legacy iOS */
   }
   @font-face {
-    font-family: 'CaviarDreams.ttf';
+    font-family: 'CaviarDreams';
     src: url("/fonts/CaviarDreams.ttf");
-    src: url('CaviarDreams.ttf.eot'); /* IE9 Compat Modes */
-    src: url('CaviarDreams.ttf.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('CaviarDreams.ttf.woff2') format('woff2'), /* Super Modern Browsers */
-         url('CaviarDreams.ttf.woff') format('woff'), /* Pretty Modern Browsers */
-         url('CaviarDreams.ttf.ttf')  format('truetype'), /* Safari, Android, iOS */
-         url('CaviarDreams.ttf.svg#svgFontName') format('svg'); /* Legacy iOS */}
+    src: url('/fonts/CaviarDreams.ttf.eot'); /* IE9 Compat Modes */
+    src: url('/fonts/CaviarDreams.ttf.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/fonts/CaviarDreams.ttf.woff2') format('woff2'), /* Super Modern Browsers */
+         url('/fonts/CaviarDreams.ttf.woff') format('woff'), /* Pretty Modern Browsers */
+         url('/fonts/CaviarDreams.ttf.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('/fonts/CaviarDreams.ttf.svg#svgFontName') format('svg'); /* Legacy iOS */}
 
 
 
@@ -92,7 +103,7 @@ h1{
   font-size: 2.5em;
   font-style: inherit;
   color:black;
-  font-family: 'CaviarDreams.ttf', "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif;
 
   text-decoration: none;
   background-color: transparent;
@@ -101,7 +112,7 @@ h1{
 }  
 
 h2{
-  font-family: 'CaviarDreams.ttf', "Times New Roman", Times, serif;
+  font-family: 'CaviarDreams', "Times New Roman", Times, serif;
   font-size: 1.875em;
   font-style: inherit;
   color: black;
@@ -305,17 +316,25 @@ fas fa-heart{
 
    
     /*footer*/
-    .footer-page{
-      background-color:whitesmoke;
-      
-      position: absolute;
-       bottom: 0;
-       left: 0; 
-       right: 0;
-       
-	height: 100px; 
-      }
-      
-      
 
+      /*
+
+.footer-page {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: red;
+}*/
+
+/*  CHANGEMENT  */
+.appear {
+    display: block !important;
+}
+/*
+#inform-and-ask {
+    display: block !important;
+}
+*/
      
