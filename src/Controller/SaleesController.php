@@ -14,9 +14,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-
-
-
 class SaleesController extends AbstractController
 {
     /**
@@ -63,7 +60,6 @@ class SaleesController extends AbstractController
             $manager->persist($commentForm->getData());
             $manager->flush();
             $commentForm = $this->createFormComment($recette);
-
         }
 
         return $this->render('salees/show.html.twig', [
@@ -105,6 +101,4 @@ class SaleesController extends AbstractController
             'cpt' => $likes
         ]);
     }
-
 }
-

@@ -46,6 +46,9 @@ tagAnalyticsCNIL.CookieConsent = function() {
 
 	//Affiche une  banniére d'information en haut de la page
 	 function showBanner(){
+
+		console.log('Ici');
+
 		var bodytag = document.getElementsByTagName('body')[0];
 		var div = document.createElement('div');
 		div.setAttribute('id','cookie-banner');
@@ -64,7 +67,9 @@ tagAnalyticsCNIL.CookieConsent = function() {
 		  
 	// Fonction utile pour récupérer un cookie a partire de son nom
 	function getCookie(NameOfCookie)  {
-		if (document.cookie.length > 0) {        
+		if (document.cookie.length > 0) {
+
+			console.log(document.cookie);
 			begin = document.cookie.indexOf(NameOfCookie+"=");
 			if (begin != -1)  {
 				begin += NameOfCookie.length+1;
@@ -147,6 +152,12 @@ tagAnalyticsCNIL.CookieConsent = function() {
 		div.style.display= "none";
 		div.style.position= "fixed";
 		div.style.zIndex= "100000";
+
+
+		/// CHANGEMENT
+		div.classList.add('appear');
+
+
 		// Le code HTML de la demande de consentement
 		// Vous pouvez modifier le contenu ainsi que le style
 		div.innerHTML =  '<div style="width: 300px; background-color: white; repeat scroll 0% 0% white; border: 1px solid #cccccc; padding :10px 10px;text-align:center; position: fixed; top:30px; left:50%; margin-top:0px; margin-left:-150px; z-index:100000; opacity:1" id="inform-and-consent">\
@@ -227,17 +238,29 @@ tagAnalyticsCNIL.CookieConsent = function() {
 		  
 		 hideInform: function() {
 			var div = document.getElementById("inform-and-ask");
-			div.style.display = "none";
+
+			/// CHANGEMENT
+			div.classList.remove('appear');
+
+
+			div.style.display = "none !important";
 			var div = document.getElementById("cookie-banner");
-			div.style.display = "none";
+			div.style.display = "none !important";
 		},
 		
 		
 		start: function() {
+
+		 	console.log('START 2');
+			document.cookie = "hasConsent= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+			deleteAnalyticsCookies();
 			//Ce bout de code vérifie que le consentement n'a pas déjà été obtenu avant d'afficher
 			// la bannière
 			var consentCookie =  getCookie('hasConsent');
-			clickprocessed = false; 
+			clickprocessed = false;
+
+			console.log('Consentcookie ' + consentCookie);
+
 			if (!consentCookie) {//L'utilisateur n'a pas encore de cookie, on affiche la banniére et si il clique sur un autre élément que la banniére, on enregistre le consentement
 				if ( notToTrack() ) { //L'utilisateur a activé DoNotTrack. Do not ask for consent and just opt him out
 					tagAnalyticsCNIL.CookieConsent.gaOptout()
@@ -258,10 +281,14 @@ tagAnalyticsCNIL.CookieConsent = function() {
 					}
 				}
 			} else {
-				if (document.cookie.indexOf('hasConsent=false') > -1) 
+				if (document.cookie.indexOf('hasConsent=false') > -1) {
 					window[disableStr] = true;
-				else 
+				}
+				else {
+
 					callGoogleAnalytics();
+					console.log('firsttttt');
+				}
 			}
 		}
 	}
@@ -269,3 +296,4 @@ tagAnalyticsCNIL.CookieConsent = function() {
 }();
 
 tagAnalyticsCNIL.CookieConsent.start();
+console.log('START');

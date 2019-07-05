@@ -56,7 +56,6 @@ class Categories
     public function __toString()
     {
         return $this->typeCategories;
-
     }
 
     /**

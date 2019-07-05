@@ -308,7 +308,6 @@ class Recette
     public function __toString()
     {
         return $this->title;
-
     }
 
     public function getCategory(): ?Categories
@@ -359,4 +358,3 @@ class Recette
         return $this;
     }
 }
-

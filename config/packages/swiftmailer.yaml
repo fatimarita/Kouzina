@@ -1,9 +1,2 @@
 swiftmailer:
     url: '%env(MAILER_URL)%'
-    transport: gmail
-    username: 'anwal.blog@gmail.com'
-    password: 'yarabisahil'
-    port: 465
-    encryption: ssl
-    auth_mode: login
-    spool: { type: 'memory' }

@@ -37,7 +37,5 @@ class ContactNotification
                 'contact' => $contact
             ]), 'text/html');
         $this->mailer->send($message);
-
     }
-
 }

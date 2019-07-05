@@ -10,8 +10,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-
-
 class ContactController extends AbstractController
 {
     /**
@@ -53,8 +51,6 @@ class ContactController extends AbstractController
         // return $this->render('pages/contact.html.twig', [
         //     'form' => $form->createView()
         // ]);
-
-
     }
 
         /**
@@ -81,18 +77,14 @@ class ContactController extends AbstractController
     {
         $form = $this->createForm(ContactType::class);
         
-        if ($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
             $notification->notify($contact);
             $this->addFlash('succes', 'Votre email a bien été envoyé');
             return $this->redirectToRoute('/');
-
-           
         }
         return $this->render('pages/contact.html.twig', [
             'form' =>$form->createView()
         ]);
-
-        
     }
 
     /**
@@ -110,13 +102,10 @@ class ContactController extends AbstractController
             'form' => $form->createView()
         ]);
 
-        if ($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
             $notification->notify($contact);
             $this->addFlash('succes', 'Votre email a bien été envoyé');
             return $this->redirectToRoute('/');
-
-           
         }
     }
-
 }

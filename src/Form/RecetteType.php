@@ -2,7 +2,6 @@
 
 namespace App\Form;
 
-
 use App\Entity\Recette;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -17,7 +16,6 @@ class RecetteType extends AbstractType
             ->add('ingredients', TextareaType::class)
             ->add('preparation', TextareaType::class)
             ->add('cuisson', TextareaType::class);
-          
     }
     public function configureOptions(OptionsResolver $resolver)
     {

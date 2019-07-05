@@ -35,5 +35,4 @@ class SearchController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-   
 }
