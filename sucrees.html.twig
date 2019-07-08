@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello {{ controller_name }}{% endblock %}
+
+{% block body %}
+<section class="recettes">
+    {% for recette in recettes %}
+
+        <article>
+            <h2>{{ recette.title }}</h2>
+            <div class="metadata">Ajouter le {{ recette.createdAt | date ('d/m/y') }}  dans la catégorie {#{ recette.categories }#}</div>
+            <div class="content">
+                <img src="{{ recette.imageSrc}}" alt="{{ recette.imageAlt}}">
+                {{ recette.content | raw }}
+                <a href="{{ path('sucrees_show', {'id': recette.id}) }}" class="btn btn-primary">Lire la suite</a>
+            </div>
+        </article>
+    {% endfor %}
+
+
+</section>
+
+{% endblock %}

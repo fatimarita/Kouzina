@@ -1,0 +1,46 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Recettes salées{% endblock %}
+
+{% block body %}
+<main class="container">
+
+   
+            <h1 class="list">Recettes</h1>
+        <div class="row">
+
+
+        {% for recette in recettes %}
+
+                <div class="col-4">
+                
+                    <div class="card mb-4 shadow-sm">
+                        <img src="{{ vich_uploader_asset(recette, 'imageFile') | imagine_filter('thumb') }}" alt="card-img-top" class="rounded-circle">
+                        
+                        <div class="card-body">
+                            <h4 class="card-text">{{ recette.title }}</h4>
+                            <div class="d-flex justify-content-center">
+        
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                        
+                                    <a href="{{ path('salees_show', {'id': recette.id}) }}" class="btn btn-secondary">Lire la suite</a>
+                                         
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+        {% endfor %}
+
+        </div>
+    </div>
+
+
+
+<div class="navigation">
+
+</main>
+{% endblock %}

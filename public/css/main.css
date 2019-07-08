@@ -12,6 +12,7 @@
   
   }
 .page-footer {
+
     background-color: whitesmoke;
     color: black;
     
@@ -35,7 +36,13 @@
   
 }
   
-  body {
+  
+.page-footer > div{
+    margin: 0;
+}
+
+body {
+
     min-height: 100vh;
 }
 
@@ -207,30 +214,6 @@ h4{
   border-color: red; /* Couleur de la bordure s'il y a lieu */
 }
 
-
-/* Les boutons*/
-/*boutton login class="btn btn-lg btn-primary btn-block"
-.btn-primary{background-color: #ABB2B9;
-
-}
-/* boutton de recherche home  "btn btn-outline-success my-2 my-sm-0" type="submit"
-.btn-outline{background-color:#ABB2B9  ;
-
-}
-/* boutton de contact  <button class="btn btn-primary">
-.btn-primary{background-color: #ABB2B9  ;
-
-}
-/* boutton de inscription class="btn btn-primary"
-.btn-primary{background-color: #ABB2B9  ;}
-
-/*boutton commentaire publier  class="btn btn-block btn-success btn-sm"
-
-.btn-success{
-  background-color: #ABB2B9 ;
-
-}*/
-
 .btn-secondary{
   background-color: #ABB2B9;
  
@@ -238,7 +221,6 @@ h4{
 .btn-group{
   align-items: center;
  
-
  }
 
 
@@ -307,43 +289,7 @@ fas fa-heart{
 }
 
 
-/*ajouter un commentaire
-<h4>Ajouter un commentaire</h4>
-    {{ form_start(commentForm, {'attr': {'class': 'commentForm'}}) }}
-    
-    {{ form_widget(commentForm, {'attr': {'class': 'foo'}}) }}
-    {{ form_widget(commentForm.content, {'attr': {'class': 'commentForm.content'}}) }}
-    {{ form_errors(commentForm.content, {'attr': {'class': 'errors'}}) }}
-    <input type="submit" value="Publier" class="btn btn-success btn-sm">
-    {{ form_end(commentForm) }}
 
-
-*/
-/*<h3>Commentaires</h3>
-    {% for comment in recette.comments %}
-        <div class="ob-Commentaires">
-            <div class="ob-list">
-            {{comment.nom}}
-            {{comment.prenom}}
-            {{comment.content}}
-            </div>
-        </div>
-    {% endfor %}
-    */
-
-   
-    /*footer*/
-
-      /*
-
-.footer-page {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    line-height: 60px;
-    background-color: red;
-}*/
 
 /*  CHANGEMENT  */
 .appear {
